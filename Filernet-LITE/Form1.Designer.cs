@@ -59,7 +59,6 @@
             toolStripSplitButton2 = new ToolStripSplitButton();
             userFolderToolStripMenuItem = new ToolStripMenuItem();
             otherDriveToolStripMenuItem = new ToolStripMenuItem();
-            scanNowToolStripMenuItem = new ToolStripMenuItem();
             rootDriveToolStripMenuItem = new ToolStripMenuItem();
             toolStrip1 = new ToolStrip();
             toolStripButton1 = new ToolStripButton();
@@ -67,6 +66,7 @@
             toolStripButton3 = new ToolStripButton();
             toolStripButton2 = new ToolStripButton();
             listView1 = new ListView();
+            folderBrowserDialog1 = new FolderBrowserDialog();
             menuStrip1.SuspendLayout();
             contextMenuStrip1.SuspendLayout();
             statusStrip1.SuspendLayout();
@@ -178,7 +178,7 @@
             // licenseToolStripMenuItem
             // 
             licenseToolStripMenuItem.Name = "licenseToolStripMenuItem";
-            licenseToolStripMenuItem.Size = new Size(180, 22);
+            licenseToolStripMenuItem.Size = new Size(113, 22);
             licenseToolStripMenuItem.Text = "License";
             licenseToolStripMenuItem.Click += licenseToolStripMenuItem_Click;
             // 
@@ -186,7 +186,7 @@
             // 
             aboutToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { filerLITEBySweeToolStripMenuItem, madeWitthCToolStripMenuItem, developersWebsiteToolStripMenuItem });
             aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            aboutToolStripMenuItem.Size = new Size(180, 22);
+            aboutToolStripMenuItem.Size = new Size(113, 22);
             aboutToolStripMenuItem.Text = "About";
             // 
             // filerLITEBySweeToolStripMenuItem
@@ -278,28 +278,21 @@
             // userFolderToolStripMenuItem
             // 
             userFolderToolStripMenuItem.Name = "userFolderToolStripMenuItem";
-            userFolderToolStripMenuItem.Size = new Size(142, 22);
+            userFolderToolStripMenuItem.Size = new Size(180, 22);
             userFolderToolStripMenuItem.Text = "User folder";
             userFolderToolStripMenuItem.Click += userFolderToolStripMenuItem_Click;
             // 
             // otherDriveToolStripMenuItem
             // 
-            otherDriveToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { scanNowToolStripMenuItem });
             otherDriveToolStripMenuItem.Name = "otherDriveToolStripMenuItem";
-            otherDriveToolStripMenuItem.Size = new Size(142, 22);
+            otherDriveToolStripMenuItem.Size = new Size(180, 22);
             otherDriveToolStripMenuItem.Text = "Other drive...";
             otherDriveToolStripMenuItem.Click += otherDriveToolStripMenuItem_Click;
-            // 
-            // scanNowToolStripMenuItem
-            // 
-            scanNowToolStripMenuItem.Name = "scanNowToolStripMenuItem";
-            scanNowToolStripMenuItem.Size = new Size(125, 22);
-            scanNowToolStripMenuItem.Text = "Scan now";
             // 
             // rootDriveToolStripMenuItem
             // 
             rootDriveToolStripMenuItem.Name = "rootDriveToolStripMenuItem";
-            rootDriveToolStripMenuItem.Size = new Size(142, 22);
+            rootDriveToolStripMenuItem.Size = new Size(180, 22);
             rootDriveToolStripMenuItem.Text = "Root drive";
             rootDriveToolStripMenuItem.Click += rootDriveToolStripMenuItem_Click;
             // 
@@ -370,6 +363,14 @@
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.SelectedIndexChanged += listView1_SelectedIndexChanged;
             // 
+            // folderBrowserDialog1
+            // 
+            folderBrowserDialog1.Description = "Choose a drive";
+            folderBrowserDialog1.RootFolder = Environment.SpecialFolder.MyComputer;
+            folderBrowserDialog1.SelectedPath = "C:\\";
+            folderBrowserDialog1.ShowNewFolderButton = false;
+            folderBrowserDialog1.UseDescriptionForTitle = true;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -436,6 +437,6 @@
         private ToolStripMenuItem otherDriveToolStripMenuItem;
         private ToolStripMenuItem rootDriveToolStripMenuItem;
         private ToolStripMenuItem userFolderToolStripMenuItem;
-        private ToolStripMenuItem scanNowToolStripMenuItem;
+        private FolderBrowserDialog folderBrowserDialog1;
     }
 }

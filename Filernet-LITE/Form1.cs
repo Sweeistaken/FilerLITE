@@ -48,7 +48,8 @@ namespace Filernet_LITE
 
         private void otherDriveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            folderBrowserDialog1.ShowDialog();
+            toolStripTextBox1.Text = folderBrowserDialog1.SelectedPath;
         }
 
         private void rootDriveToolStripMenuItem_Click(object sender, EventArgs e)
