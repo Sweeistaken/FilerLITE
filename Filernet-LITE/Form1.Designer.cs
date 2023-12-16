@@ -66,7 +66,6 @@
             toolStripButton3 = new ToolStripButton();
             toolStripButton2 = new ToolStripButton();
             listView1 = new ListView();
-            folderBrowserDialog1 = new FolderBrowserDialog();
             menuStrip1.SuspendLayout();
             contextMenuStrip1.SuspendLayout();
             statusStrip1.SuspendLayout();
@@ -363,14 +362,6 @@
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.SelectedIndexChanged += listView1_SelectedIndexChanged;
             // 
-            // folderBrowserDialog1
-            // 
-            folderBrowserDialog1.Description = "Choose a drive";
-            folderBrowserDialog1.RootFolder = Environment.SpecialFolder.MyComputer;
-            folderBrowserDialog1.SelectedPath = "C:\\";
-            folderBrowserDialog1.ShowNewFolderButton = false;
-            folderBrowserDialog1.UseDescriptionForTitle = true;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -437,6 +428,5 @@
         private ToolStripMenuItem otherDriveToolStripMenuItem;
         private ToolStripMenuItem rootDriveToolStripMenuItem;
         private ToolStripMenuItem userFolderToolStripMenuItem;
-        private FolderBrowserDialog folderBrowserDialog1;
     }
 }
