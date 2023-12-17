@@ -74,7 +74,7 @@
             // 
             // menuStrip1
             // 
-            menuStrip1.BackColor = SystemColors.ActiveCaption;
+            menuStrip1.BackColor = SystemColors.Control;
             menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, editToolStripMenuItem, helpToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
@@ -132,6 +132,7 @@
             editToolStripMenuItem.Name = "editToolStripMenuItem";
             editToolStripMenuItem.Size = new Size(55, 20);
             editToolStripMenuItem.Text = "Layout";
+            editToolStripMenuItem.Click += editToolStripMenuItem_Click;
             // 
             // listToolStripMenuItem
             // 
@@ -177,7 +178,7 @@
             // licenseToolStripMenuItem
             // 
             licenseToolStripMenuItem.Name = "licenseToolStripMenuItem";
-            licenseToolStripMenuItem.Size = new Size(113, 22);
+            licenseToolStripMenuItem.Size = new Size(180, 22);
             licenseToolStripMenuItem.Text = "License";
             licenseToolStripMenuItem.Click += licenseToolStripMenuItem_Click;
             // 
@@ -185,7 +186,7 @@
             // 
             aboutToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { filerLITEBySweeToolStripMenuItem, madeWitthCToolStripMenuItem, developersWebsiteToolStripMenuItem });
             aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            aboutToolStripMenuItem.Size = new Size(113, 22);
+            aboutToolStripMenuItem.Size = new Size(180, 22);
             aboutToolStripMenuItem.Text = "About";
             // 
             // filerLITEBySweeToolStripMenuItem
@@ -277,21 +278,21 @@
             // userFolderToolStripMenuItem
             // 
             userFolderToolStripMenuItem.Name = "userFolderToolStripMenuItem";
-            userFolderToolStripMenuItem.Size = new Size(142, 22);
+            userFolderToolStripMenuItem.Size = new Size(180, 22);
             userFolderToolStripMenuItem.Text = "User folder";
             userFolderToolStripMenuItem.Click += userFolderToolStripMenuItem_Click;
             // 
             // otherDriveToolStripMenuItem
             // 
             otherDriveToolStripMenuItem.Name = "otherDriveToolStripMenuItem";
-            otherDriveToolStripMenuItem.Size = new Size(142, 22);
+            otherDriveToolStripMenuItem.Size = new Size(180, 22);
             otherDriveToolStripMenuItem.Text = "Other drive...";
             otherDriveToolStripMenuItem.Click += otherDriveToolStripMenuItem_Click;
             // 
             // rootDriveToolStripMenuItem
             // 
             rootDriveToolStripMenuItem.Name = "rootDriveToolStripMenuItem";
-            rootDriveToolStripMenuItem.Size = new Size(142, 22);
+            rootDriveToolStripMenuItem.Size = new Size(180, 22);
             rootDriveToolStripMenuItem.Text = "Root drive";
             rootDriveToolStripMenuItem.Click += rootDriveToolStripMenuItem_Click;
             // 
@@ -339,7 +340,7 @@
             // toolStripButton2
             // 
             toolStripButton2.Alignment = ToolStripItemAlignment.Right;
-            toolStripButton2.BackColor = SystemColors.Control;
+            toolStripButton2.BackColor = Color.Transparent;
             toolStripButton2.DisplayStyle = ToolStripItemDisplayStyle.Text;
             toolStripButton2.ForeColor = SystemColors.ControlText;
             toolStripButton2.Image = (Image)resources.GetObject("toolStripButton2.Image");
@@ -353,6 +354,7 @@
             // listView1
             // 
             listView1.BackColor = SystemColors.Control;
+            listView1.BorderStyle = BorderStyle.FixedSingle;
             listView1.ContextMenuStrip = contextMenuStrip1;
             listView1.Dock = DockStyle.Fill;
             listView1.ForeColor = SystemColors.ControlText;

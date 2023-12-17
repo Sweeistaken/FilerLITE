@@ -13,6 +13,24 @@ namespace Filernet_LITE
             InitializeComponent();
         }
 
+        private static Color GetTitleBarColor()
+        {
+            using var key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Microsoft\Windows\DWM");
+            var value = key?.GetValue("ColorizationColor");
+            if (value is int i)
+            {
+                return Color.FromArgb((byte)(i >> 16), (byte)(i >> 8), (byte)i);
+            }
+            else if (value is byte[] bytes && bytes.Length == 4)
+            {
+                return Color.FromArgb(bytes[2], bytes[1], bytes[0]);
+            }
+            else
+            {
+                return SystemColors.ActiveCaption;
+            }
+        }
+
         private static bool IsDarkModeEnabled()
         {
             using var key = Registry.CurrentUser.OpenSubKey(@"Software\Microsoft\Windows\CurrentVersion\Themes\Personalize");
@@ -31,9 +49,32 @@ namespace Filernet_LITE
             }
         }
 
+        private static bool IsTitleBarTextColorDark()
+        {
+            var titleBarColor = GetTitleBarColor();
+            var luminance = 0.2126 * titleBarColor.R + 0.7152 * titleBarColor.G + 0.0722 * titleBarColor.B;
+            return luminance < 128;
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
-            MessageBox.Show(IsDarkModeEnabled().ToString());
+            menuStrip1.BackColor = GetTitleBarColor();
+            if (IsTitleBarTextColorDark())
+            {
+                helpToolStripMenuItem.ForeColor = Color.FromArgb(255, 255, 255);
+                editToolStripMenuItem.ForeColor = Color.FromArgb(255, 255, 255);
+                fileToolStripMenuItem.ForeColor = Color.FromArgb(255, 255, 255);
+            }
+            if (IsDarkModeEnabled())
+            {
+                toolStrip1.BackColor = Color.FromArgb(64, 64, 64);
+                statusStrip1.BackColor = Color.FromArgb(64, 64, 64);
+                listView1.BackColor = Color.Gray;
+                BackColor = Color.FromArgb(64, 64, 64);
+                toolStripButton2.ForeColor = Color.FromArgb(255, 255, 255);
+                toolStripButton3.ForeColor = Color.FromArgb(255, 255, 255);
+                toolStripStatusLabel1.ForeColor = Color.FromArgb(255, 255, 255);
+            }
         }
 
         private void madeWitthCToolStripMenuItem_Click(object sender, EventArgs e)
@@ -68,7 +109,7 @@ namespace Filernet_LITE
 
         private void otherDriveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void rootDriveToolStripMenuItem_Click(object sender, EventArgs e)
@@ -89,7 +130,12 @@ namespace Filernet_LITE
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            var Mes = MessageBox.Show("Are you sure you want to delete this file?","Delete file",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+            var Mes = MessageBox.Show("Are you sure you want to delete this file?", "Delete file", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+        }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
