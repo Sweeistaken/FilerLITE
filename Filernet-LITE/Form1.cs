@@ -1,8 +1,10 @@
 using System.Diagnostics;
 using System.Windows.Forms;
 using Microsoft.VisualBasic.FileIO;
+using Microsoft.Win32;
 namespace Filernet_LITE
 {
+
     public partial class Form1 : Form
     {
         int icon = 5;
@@ -11,9 +13,27 @@ namespace Filernet_LITE
             InitializeComponent();
         }
 
+        private static bool IsDarkModeEnabled()
+        {
+            using var key = Registry.CurrentUser.OpenSubKey(@"Software\Microsoft\Windows\CurrentVersion\Themes\Personalize");
+            var value = key?.GetValue("AppsUseLightTheme");
+            if (value is int i)
+            {
+                return i == 0;
+            }
+            else if (value is string s)
+            {
+                return s == "0";
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            MessageBox.Show(IsDarkModeEnabled().ToString());
         }
 
         private void madeWitthCToolStripMenuItem_Click(object sender, EventArgs e)
