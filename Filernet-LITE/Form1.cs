@@ -1,6 +1,6 @@
 using System.Diagnostics;
 using System.Windows.Forms;
-
+using Microsoft.VisualBasic.FileIO;
 namespace Filernet_LITE
 {
     public partial class Form1 : Form
@@ -48,8 +48,7 @@ namespace Filernet_LITE
 
         private void otherDriveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            folderBrowserDialog1.ShowDialog();
-            toolStripTextBox1.Text = folderBrowserDialog1.SelectedPath;
+            
         }
 
         private void rootDriveToolStripMenuItem_Click(object sender, EventArgs e)
@@ -66,6 +65,11 @@ namespace Filernet_LITE
         private void toolStripSplitButton2_ButtonClick(object sender, EventArgs e)
         {
             toolStripTextBox1.Text = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            var Mes = MessageBox.Show("Are you sure you want to delete this file?","Delete file",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
         }
     }
 }

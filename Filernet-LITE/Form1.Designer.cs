@@ -277,21 +277,21 @@
             // userFolderToolStripMenuItem
             // 
             userFolderToolStripMenuItem.Name = "userFolderToolStripMenuItem";
-            userFolderToolStripMenuItem.Size = new Size(180, 22);
+            userFolderToolStripMenuItem.Size = new Size(142, 22);
             userFolderToolStripMenuItem.Text = "User folder";
             userFolderToolStripMenuItem.Click += userFolderToolStripMenuItem_Click;
             // 
             // otherDriveToolStripMenuItem
             // 
             otherDriveToolStripMenuItem.Name = "otherDriveToolStripMenuItem";
-            otherDriveToolStripMenuItem.Size = new Size(180, 22);
+            otherDriveToolStripMenuItem.Size = new Size(142, 22);
             otherDriveToolStripMenuItem.Text = "Other drive...";
             otherDriveToolStripMenuItem.Click += otherDriveToolStripMenuItem_Click;
             // 
             // rootDriveToolStripMenuItem
             // 
             rootDriveToolStripMenuItem.Name = "rootDriveToolStripMenuItem";
-            rootDriveToolStripMenuItem.Size = new Size(180, 22);
+            rootDriveToolStripMenuItem.Size = new Size(142, 22);
             rootDriveToolStripMenuItem.Text = "Root drive";
             rootDriveToolStripMenuItem.Click += rootDriveToolStripMenuItem_Click;
             // 
@@ -315,6 +315,7 @@
             toolStripButton1.Name = "toolStripButton1";
             toolStripButton1.Size = new Size(23, 22);
             toolStripButton1.Text = "Delete";
+            toolStripButton1.Click += toolStripButton1_Click;
             // 
             // toolStripTextBox1
             // 
